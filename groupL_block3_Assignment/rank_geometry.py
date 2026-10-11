@@ -2,12 +2,10 @@ from manim import *
 
 class RankGeometry(Scene):
     def construct(self):
-        # Title
         title = Text("Geometrical Interpretation of Matrix Rank", font_size=32)
         title.to_edge(UP)
         self.play(Write(title))
 
-        # Create coordinate grid
         grid = NumberPlane(
             x_range=[-4, 4, 1],
             y_range=[-3, 3, 1],
@@ -71,7 +69,7 @@ class RankGeometry(Scene):
 
         takeaway = VGroup(
             Text("Matrix rank", font_size=36),
-            MathTex(r"\operatorname{rank}(A)=\dim(\operatorname{Im}(A))"),
+            MathTex(r"\operatorname{rank}(A)=\dim(\operatorname{Col}(A))"),
             Text("Rank tells us how many independent dimensions remain.",
                  font_size=24)
         ).arrange(DOWN, buff=0.5)
